@@ -10,7 +10,13 @@ import UIKit
 import ReSwift
 import ReSwiftMonitor
 
-let store = Store<AppState>(reducer: AppState.reducer(), state: AppState(), middleware: [MonitorMiddleware.make(), LoggingMiddleware.make(prefix: "[ReSwift]")])
+var middleware: [Middleware<AppState>] = {
+    let monitorMiddleware = MonitorMiddleware.make(configuration: Configuration())
+    let loggingMiddleware = LoggingMiddleware.make(prefix: "[ReSwift]")
+    return [monitorMiddleware, loggingMiddleware]
+}()
+
+let store = Store<AppState>(reducer: AppState.reducer(), state: AppState(), middleware: middleware)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

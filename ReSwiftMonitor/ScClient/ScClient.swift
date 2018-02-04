@@ -3,25 +3,10 @@ import Foundation
 
 
 public class ScClient : Listener, WebSocketDelegate {
-    public func websocketDidConnect(socket: WebSocketClient) {
-
-    }
-    
-    public func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
-        
-    }
-    
-    public func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
-        
-    }
-    
-    public func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
-        
-    }
-    
+    public static let shared = ScClient()
     var authToken : String?
     var url : String?
-    var socket : WebSocket
+    var socket : WebSocket!
     var counter : AtomicInteger
     
     var onConnect : ((ScClient)-> Void)?
@@ -29,8 +14,6 @@ public class ScClient : Listener, WebSocketDelegate {
     var onDisconnect : ((ScClient, Error?)-> Void)?
     var onSetAuthentication : ((ScClient, String?)-> Void)?
     var onAuthentication : ((ScClient, Bool?)-> Void)?
-    
-    
     
     public func setBasicListener(onConnect : ((ScClient)-> Void)?, onConnectError : ((ScClient, Error?)-> Void)?, onDisconnect : ((ScClient, Error?)-> Void)?) {
         self.onConnect = onConnect
@@ -43,16 +26,16 @@ public class ScClient : Listener, WebSocketDelegate {
         self.onAuthentication = onAuthentication
     }
     
-    public func websocketDidConnect(socket: WebSocket) {
+    public func websocketDidConnect(socket: WebSocketClient) {
         onConnect?(self)
         self.sendHandShake()
     }
     
-    public func websocketDidDisconnect(socket: WebSocket, error: Error?) {
+    public func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
         onDisconnect?(self, error)
     }
     
-    public func websocketDidReceiveMessage(socket: WebSocket, text: String) {
+    public func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
         print("got some text: \(text)")
         if (text == "#1") {
             socket.write(string: "#2")
@@ -93,16 +76,19 @@ public class ScClient : Listener, WebSocketDelegate {
         }
     }
     
-    public func websocketDidReceiveData(socket: WebSocket, data: Data) {
+    public func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
         print("Received data: \(data.count)")
     }
     
-    public init(url : String) {
+    public func setWebSocket(with url: URL) {
+        self.socket = WebSocket(url: url)
+        socket.delegate = self
+    }
+    
+    public override init() {
         self.counter = AtomicInteger()
         self.authToken = nil
-        self.socket = WebSocket(url: URL(string: url)!)
         super.init()
-        socket.delegate = self
     }
     
     public func connect() {

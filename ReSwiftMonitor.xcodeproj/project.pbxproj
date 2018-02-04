@@ -25,7 +25,7 @@
 		177781E82023D4F0006D5E0A /* Miscellaneous.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177781DF2023D4F0006D5E0A /* Miscellaneous.swift */; };
 		177781E92023D4F0006D5E0A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177781E12023D4F0006D5E0A /* Event.swift */; };
 		177781EA2023D4F0006D5E0A /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177781E32023D4F0006D5E0A /* Parser.swift */; };
-		177781EB2023D4F0006D5E0A /* client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177781E42023D4F0006D5E0A /* client.swift */; };
+		177781EB2023D4F0006D5E0A /* ScClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177781E42023D4F0006D5E0A /* ScClient.swift */; };
 		183FF5951F1E375A543FABC4 /* Pods_ReSwiftMonitor_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366D2FC8CAFB797EEA0CA554 /* Pods_ReSwiftMonitor_Sample.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +61,7 @@
 		177781DF2023D4F0006D5E0A /* Miscellaneous.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Miscellaneous.swift; sourceTree = "<group>"; };
 		177781E12023D4F0006D5E0A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		177781E32023D4F0006D5E0A /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
-		177781E42023D4F0006D5E0A /* client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = client.swift; sourceTree = "<group>"; };
+		177781E42023D4F0006D5E0A /* ScClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScClient.swift; sourceTree = "<group>"; };
 		34E5E3A577AF0A0B6E8A24F4 /* Pods-ReSwiftMonitor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReSwiftMonitor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReSwiftMonitor/Pods-ReSwiftMonitor.debug.xcconfig"; sourceTree = "<group>"; };
 		366D2FC8CAFB797EEA0CA554 /* Pods_ReSwiftMonitor_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReSwiftMonitor_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		525A5E8BF16CFD0ED1B68750 /* Pods_ReSwiftMonitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReSwiftMonitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,7 +153,7 @@
 				177781DC2023D4F0006D5E0A /* Utils */,
 				177781E02023D4F0006D5E0A /* Models */,
 				177781E22023D4F0006D5E0A /* Parser */,
-				177781E42023D4F0006D5E0A /* client.swift */,
+				177781E42023D4F0006D5E0A /* ScClient.swift */,
 			);
 			path = ScClient;
 			sourceTree = "<group>";
@@ -425,7 +425,7 @@
 			files = (
 				177781E92023D4F0006D5E0A /* Event.swift in Sources */,
 				177781EA2023D4F0006D5E0A /* Parser.swift in Sources */,
-				177781EB2023D4F0006D5E0A /* client.swift in Sources */,
+				177781EB2023D4F0006D5E0A /* ScClient.swift in Sources */,
 				177781E62023D4F0006D5E0A /* AtomicInteger.swift in Sources */,
 				177781E82023D4F0006D5E0A /* Miscellaneous.swift in Sources */,
 				1777819C20228E9B006D5E0A /* MonitorMiddleware.swift in Sources */,

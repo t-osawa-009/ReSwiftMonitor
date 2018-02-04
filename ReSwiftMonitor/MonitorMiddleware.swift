@@ -9,26 +9,40 @@
 import Foundation
 import ReSwift
 
+public struct Configuration {
+    let host: String
+    let port: Int
+    public init(host: String = "localhost", port: Int = 8000) {
+        self.host = host
+        self.port = port
+    }
+    
+    public var url: URL? {
+        let urlInfo = String(format: "%@:%d/socketcluster", host, port)
+        let urlString = String(format: "ws://%@/?transport=websocket", urlInfo)
+        return URL(string: urlString)
+    }
+}
+
 public struct MonitorMiddleware {
-    public static func make() -> Middleware<StateType> {
+    public static func make(configuration: Configuration) -> Middleware<StateType> {
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount = 1
         queue.qualityOfService = .default
         queue.isSuspended = true
         
         return { dispatch, fetchState in
-            let host = "localhost"
-            let port = 8000
-            let urlInfo = String(format: "%@:%d/socketcluster", host, port)
-            let urlString = String(format: "ws://%@/?transport=websocket", urlInfo)
-            let client = ScClient(url: urlString)
-            client.socket.disableSSLCertValidation = true
+            guard let url = configuration.url else {
+                fatalError("不正なURL")
+            }
+            let client = ScClient.shared
+            client.setWebSocket(with: url)
             client.connect()
             return { next in
                 return { action in
+                    next(action)
                     queue.isSuspended = !client.socket.isConnected
                     queue.addOperation(SendActionInfoOperation(state: fetchState()!, action: action, client: client))
-                    return next(action)
                 }
             }
         }
@@ -38,7 +52,7 @@ public struct MonitorMiddleware {
 fileprivate class SendActionInfoOperation: Operation {
     let state: StateType
     let action: Action
-    weak var client: ScClient!
+    unowned let client: ScClient
     
     init(state: StateType, action: Action, client: ScClient) {
         self.state = state
