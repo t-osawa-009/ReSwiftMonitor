@@ -12,14 +12,28 @@ import ReSwift
 public struct Configuration {
     let host: String
     let port: Int
-    public init(host: String = "localhost", port: Int = 8000) {
+    let isSecureConnection: Bool
+    public init(host: String = "localhost", port: Int = 8000, isSecureConnection: Bool = false) {
         self.host = host
         self.port = port
+        self.isSecureConnection = isSecureConnection
     }
     
     public var url: URL? {
-        let urlInfo = String(format: "%@:%d/socketcluster", host, port)
-        let urlString = String(format: "ws://%@/?transport=websocket", urlInfo)
+        let urlInfo: String = {
+            if isSecureConnection {
+                return String(format: "%@:%d", host, port)
+            } else {
+                return String(format: "%@:%d/socketcluster", host, port)
+            }
+        }()
+        let urlString: String = {
+            if isSecureConnection {
+                return String(format: "wss://%@/?transport=websocket", urlInfo)
+            } else {
+                return String(format: "ws://%@/?transport=websocket", urlInfo)
+            }
+        }()
         return URL(string: urlString)
     }
 }
