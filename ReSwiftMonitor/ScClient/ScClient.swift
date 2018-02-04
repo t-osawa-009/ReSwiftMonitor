@@ -1,20 +1,28 @@
 import Starscream
 import Foundation
 
-
-public class ScClient : Listener, WebSocketDelegate {
+public class ScClient: Listener {
+    // MARK: - property
     public static let shared = ScClient()
     var authToken : String?
     var url : String?
     var socket : WebSocket!
     var counter : AtomicInteger
-    
+    var socketId: String?
     var onConnect : ((ScClient)-> Void)?
     var onConnectError : ((ScClient, Error?)-> Void)?
     var onDisconnect : ((ScClient, Error?)-> Void)?
     var onSetAuthentication : ((ScClient, String?)-> Void)?
     var onAuthentication : ((ScClient, Bool?)-> Void)?
     
+    // MARK: - init
+    public override init() {
+        self.counter = AtomicInteger()
+        self.authToken = nil
+        super.init()
+    }
+    
+     // MARK: - methods
     public func setBasicListener(onConnect : ((ScClient)-> Void)?, onConnectError : ((ScClient, Error?)-> Void)?, onDisconnect : ((ScClient, Error?)-> Void)?) {
         self.onConnect = onConnect
         self.onDisconnect = onDisconnect
@@ -26,69 +34,9 @@ public class ScClient : Listener, WebSocketDelegate {
         self.onAuthentication = onAuthentication
     }
     
-    public func websocketDidConnect(socket: WebSocketClient) {
-        onConnect?(self)
-        self.sendHandShake()
-    }
-    
-    public func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
-        onDisconnect?(self, error)
-    }
-    
-    public func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
-        print("got some text: \(text)")
-        if (text == "#1") {
-            socket.write(string: "#2")
-        } else {
-            if let messageObject = JSONConverter.deserializeString(message: text) {
-                if let (data, rid, cid, eventName, error) = Parser.getMessageDetails(myMessage: messageObject) {
-                    
-                    let parseResult = Parser.parse(rid: rid, cid: cid, event: eventName)
-                    
-                    switch parseResult {
-                        
-                    case .isAuthenticated:
-                        let isAuthenticated = ClientUtils.getIsAuthenticated(message: messageObject)
-                        onAuthentication?(self, isAuthenticated)
-                    case .publish:
-                        if let channel = Model.getChannelObject(data: data as AnyObject) {
-                            handleOnListener(eventName: channel.channel, data: channel.data as AnyObject)
-                        }
-                    case .removeToken:
-                        self.authToken = nil
-                    case .setToken:
-                        authToken = ClientUtils.getAuthToken(message: messageObject)
-                        self.onSetAuthentication?(self, authToken)
-                    case .ackReceive:
-                        
-                        handleEmitAck(id: rid!, error: error as AnyObject, data: data as AnyObject)
-                    case .event:
-                        if hasEventAck(eventName: eventName!) {
-                            handleOnAckListener(eventName: eventName!, data: data as AnyObject, ack: self.ack(cid: cid!))
-                        } else {
-                            handleOnListener(eventName: eventName!, data: data as AnyObject)
-                        }
-                    
-                    }
-                    
-                }
-            }
-        }
-    }
-    
-    public func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
-        print("Received data: \(data.count)")
-    }
-    
     public func setWebSocket(with url: URL) {
         self.socket = WebSocket(url: url)
         socket.delegate = self
-    }
-    
-    public override init() {
-        self.counter = AtomicInteger()
-        self.authToken = nil
-        super.init()
     }
     
     public func connect() {
@@ -173,5 +121,63 @@ public class ScClient : Listener, WebSocketDelegate {
     }
 }
 
-
+// MARK: - WebSocketDelegate
+extension ScClient: WebSocketDelegate {
+    public func websocketDidConnect(socket: WebSocketClient) {
+        onConnect?(self)
+        self.sendHandShake()
+    }
+    
+    public func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
+        onDisconnect?(self, error)
+    }
+    
+    public func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
+        print("got some text: \(text)")
+        if (text == "#1") {
+            socket.write(string: "#2")
+        } else {
+            if let messageObject = JSONConverter.deserializeString(message: text) {
+                if let (data, _id, rid, cid, eventName, error) = Parser.getMessageDetails(myMessage: messageObject) {
+                    
+                    let parseResult = Parser.parse(rid: rid, cid: cid, event: eventName)
+                    
+                    switch parseResult {
+                        
+                    case .isAuthenticated:
+                        let isAuthenticated = ClientUtils.getIsAuthenticated(message: messageObject)
+                        if isAuthenticated != nil {
+                            self.socketId = _id
+                        }
+                        onAuthentication?(self, isAuthenticated)
+                    case .publish:
+                        if let channel = Model.getChannelObject(data: data as AnyObject) {
+                            handleOnListener(eventName: channel.channel, data: channel.data as AnyObject)
+                        }
+                    case .removeToken:
+                        self.authToken = nil
+                    case .setToken:
+                        authToken = ClientUtils.getAuthToken(message: messageObject)
+                        self.onSetAuthentication?(self, authToken)
+                    case .ackReceive:
+                        
+                        handleEmitAck(id: rid!, error: error as AnyObject, data: data as AnyObject)
+                    case .event:
+                        if hasEventAck(eventName: eventName!) {
+                            handleOnAckListener(eventName: eventName!, data: data as AnyObject, ack: self.ack(cid: cid!))
+                        } else {
+                            handleOnListener(eventName: eventName!, data: data as AnyObject)
+                        }
+                        
+                    }
+                    
+                }
+            }
+        }
+    }
+    
+    public func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
+        print("Received data: \(data.count)")
+    }
+}
 

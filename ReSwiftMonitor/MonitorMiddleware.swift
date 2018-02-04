@@ -84,9 +84,13 @@ fileprivate class SendActionInfoOperation: Operation {
             serializedAction = _serializedAction
         }
         
+        let soketID: String = {
+            return client.socketId ?? ""
+        }()
+        
         let data: [String: Any] = [
             "type": "ACTION",
-            "id": self.client.counter.value,
+            "id": soketID,
             "action": [
                 "action": serializedAction,
                 "timestamp": Date().timeIntervalSinceReferenceDate
