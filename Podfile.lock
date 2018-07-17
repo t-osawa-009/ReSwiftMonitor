@@ -1,28 +1,18 @@
 PODS:
-  - HandyJSON (4.0.0-beta.1)
+  - HandyJSON (4.1.1)
   - ReSwift (4.0.1)
-  - Starscream (3.0.4)
+  - Starscream (3.0.5)
 
 DEPENDENCIES:
-  - HandyJSON (from `https://github.com/alibaba/HandyJSON`, branch `master`)
+  - HandyJSON (~> 4.1.1)
   - ReSwift
   - Starscream (~> 3.0.2)
 
-EXTERNAL SOURCES:
-  HandyJSON:
-    :branch: master
-    :git: https://github.com/alibaba/HandyJSON
-
-CHECKOUT OPTIONS:
-  HandyJSON:
-    :commit: 9701df1c296e3ba6a11fc0194d4ab8f1e77df873
-    :git: https://github.com/alibaba/HandyJSON
-
 SPEC CHECKSUMS:
-  HandyJSON: fe8eb05d9dcc1891d5c181758930d340295e0913
+  HandyJSON: 3a3de917c4118767ffe41c29b5acba23409649f4
   ReSwift: f4012c613e13da7398827fe5aebdb938eaed40a3
-  Starscream: f5da93fe6984c77b694366bf7299b7dc63a76f26
+  Starscream: faf918b2f2eff7d5dd21180646bf015a669673bd
 
-PODFILE CHECKSUM: 4f3e4238d1ae3b8d154b6df7a3d2292c679ea7ea
+PODFILE CHECKSUM: 9650e69c748522f2ee51bdcc6a574aec396d7a01
 
 COCOAPODS: 1.4.0
