@@ -27,23 +27,14 @@ public class Parser {
         }
     }
     
-    public static func getMessageDetails(myMessage : Any) -> (data: Any?, id: String?, rid : Int?, cid : Int?, eventName : String?, error : Any?)? {
+    public static func getMessageDetails(myMessage : Any) -> (data: Any?, rid : Int?, cid : Int?, eventName : String?, error : Any?)? {
         if let messageItem = myMessage as? [String: Any] {
-            
             let data = messageItem["data"]
-            let id: String? = {
-                if let dic = data as? [String: Any] {
-                    return dic["id"] as? String
-                } else {
-                    return nil
-                }
-            }()
-            
             let rid = messageItem["rid"] as? Int
             let cid = messageItem["cid"] as? Int
             let event = messageItem["event"] as? String
             let error = messageItem["error"]
-            return (data, id, rid, cid, event, error)
+            return (data, rid, cid, event, error)
         }
         return nil
     }

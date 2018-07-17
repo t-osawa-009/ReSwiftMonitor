@@ -138,7 +138,7 @@ extension ScClient: WebSocketDelegate {
             socket.write(string: "#2")
         } else {
             if let messageObject = JSONConverter.deserializeString(message: text) {
-                if let (data, _id, rid, cid, eventName, error) = Parser.getMessageDetails(myMessage: messageObject) {
+                if let (data, rid, cid, eventName, error) = Parser.getMessageDetails(myMessage: messageObject) {
                     
                     let parseResult = Parser.parse(rid: rid, cid: cid, event: eventName)
                     
@@ -147,7 +147,7 @@ extension ScClient: WebSocketDelegate {
                     case .isAuthenticated:
                         let isAuthenticated = ClientUtils.getIsAuthenticated(message: messageObject)
                         if isAuthenticated != nil {
-                            self.socketId = _id
+                            self.socketId = ClientUtils.getSocketId(message: messageObject)
                         }
                         onAuthentication?(self, isAuthenticated)
                     case .publish:

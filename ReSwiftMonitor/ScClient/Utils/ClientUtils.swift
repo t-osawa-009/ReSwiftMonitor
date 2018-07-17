@@ -19,4 +19,13 @@ public class ClientUtils {
         return nil
     }
     
+    public static func getSocketId(message: Any?) -> String? {
+        if let items = message as? [String : Any],
+            let data = items["data"] as? [String: Any] {
+            return data["id"] as? String
+        }
+    
+        return nil
+    }
+    
 }
