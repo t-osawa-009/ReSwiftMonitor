@@ -8,7 +8,7 @@ public class ScClient: Listener {
     var url : String?
     var socket : WebSocket!
     var counter : AtomicInteger
-    var socketId: String?
+    private(set)var socketId: String?
     var onConnect : ((ScClient)-> Void)?
     var onConnectError : ((ScClient, Error?)-> Void)?
     var onDisconnect : ((ScClient, Error?)-> Void)?
