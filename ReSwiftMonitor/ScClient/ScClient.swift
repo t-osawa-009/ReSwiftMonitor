@@ -3,12 +3,12 @@ import Foundation
 
 public class ScClient: Listener {
     // MARK: - property
-    public static let shared = ScClient()
     var authToken : String?
     var url : String?
     var socket : WebSocket!
     var counter : AtomicInteger
     private(set)var socketId: String?
+    
     var onConnect : ((ScClient)-> Void)?
     var onConnectError : ((ScClient, Error?)-> Void)?
     var onDisconnect : ((ScClient, Error?)-> Void)?
@@ -16,10 +16,20 @@ public class ScClient: Listener {
     var onAuthentication : ((ScClient, Bool?)-> Void)?
     
     // MARK: - init
-    public override init() {
+    public init(url: String, authToken: String? = nil) {
         self.counter = AtomicInteger()
-        self.authToken = nil
+        self.authToken = authToken
+        self.socket = WebSocket(url: URL(string: url)!)
         super.init()
+        socket.delegate = self
+    }
+    
+    public init(urlRequest: URLRequest, authToken: String? = nil, protocols: [String]? = nil) {
+        self.counter = AtomicInteger()
+        self.authToken = authToken
+        self.socket = WebSocket(request: urlRequest, protocols : protocols)
+        super.init()
+        socket.delegate = self
     }
     
      // MARK: - methods
@@ -34,6 +44,10 @@ public class ScClient: Listener {
         self.onAuthentication = onAuthentication
     }
     
+    public func setBackgroundQueue(queueName : String) {
+        socket.callbackQueue = DispatchQueue(label: queueName)
+    }
+
     public func setWebSocket(with url: URL) {
         self.socket = WebSocket(url: url)
         socket.delegate = self
@@ -41,6 +55,18 @@ public class ScClient: Listener {
     
     public func connect() {
         socket.connect()
+    }
+    
+    public func isConnected() -> Bool {
+        return socket.isConnected
+    }
+    
+    public func setAuthToken(token : String) {
+        self.authToken = token
+    }
+    
+    public func getAuthToken () -> String? {
+        return self.authToken
     }
     
     private func sendHandShake() {
@@ -124,8 +150,9 @@ public class ScClient: Listener {
 // MARK: - WebSocketDelegate
 extension ScClient: WebSocketDelegate {
     public func websocketDidConnect(socket: WebSocketClient) {
-        onConnect?(self)
+        counter.value = 0
         self.sendHandShake()
+        onConnect?(self)
     }
     
     public func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
@@ -133,7 +160,6 @@ extension ScClient: WebSocketDelegate {
     }
     
     public func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
-        print("got some text: \(text)")
         if (text == "#1") {
             socket.write(string: "#2")
         } else {

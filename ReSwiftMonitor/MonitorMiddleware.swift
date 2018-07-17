@@ -49,8 +49,7 @@ public struct MonitorMiddleware {
             guard let url = configuration.url else {
                 fatalError("不正なURL")
             }
-            let client = ScClient.shared
-            client.setWebSocket(with: url)
+            let client = ScClient(url: url.absoluteString)
             client.connect()
             return { next in
                 return { action in
