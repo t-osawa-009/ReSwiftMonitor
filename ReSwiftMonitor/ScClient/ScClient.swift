@@ -56,12 +56,12 @@ public class ScClient: Listener {
         }
     }
     
-    public func emit (eventName : String, data : AnyObject?) {
+    public func emit(eventName : String, data : AnyObject?) {
         let emitObject = Model.getEmitEventObject(eventName: eventName, data: data, messageId: counter.incrementAndGet())
         self.socket.write(string : emitObject.toJSONString()!)
     }
     
-    public func emitAck (eventName : String, data : AnyObject?, ack : @escaping (String, AnyObject?, AnyObject?)-> Void) {
+    public func emitAck(eventName : String, data : AnyObject?, ack : @escaping (String, AnyObject?, AnyObject?)-> Void) {
         let id = counter.incrementAndGet()
         let emitObject = Model.getEmitEventObject(eventName: eventName, data: data, messageId: id)
         putEmitAck(id: id, eventName: eventName, ack: ack)
@@ -92,27 +92,27 @@ public class ScClient: Listener {
         self.socket.write(string : unsubscribeObject.toJSONString()!)
     }
     
-    public func publish(channelName : String, data : AnyObject?) {
+    public func publish(channelName: String, data : AnyObject?) {
         let publishObject = Model.getPublishEventObject(channelName: channelName, data: data, messageId: counter.incrementAndGet())
         self.socket.write(string : publishObject.toJSONString()!)
     }
     
-    public func publishAck(channelName : String, data : AnyObject?, ack : @escaping (String, AnyObject?, AnyObject?)-> Void) {
+    public func publishAck(channelName: String, data : AnyObject?, ack : @escaping (String, AnyObject?, AnyObject?)-> Void) {
         let id = counter.incrementAndGet()
         let publishObject = Model.getPublishEventObject(channelName: channelName, data: data, messageId: id)
         putEmitAck(id: id, eventName: channelName, ack: ack)
         self.socket.write(string : publishObject.toJSONString()!)
     }
     
-    public func onChannel(channelName : String, ack : @escaping (String, AnyObject?) -> Void) {
+    public func onChannel(channelName: String, ack: @escaping (String, AnyObject?) -> Void) {
         putOnListener(eventName: channelName, onListener: ack)
     }
     
-    public func on(eventName : String, ack : @escaping (String, AnyObject?) -> Void) {
+    public func on(eventName: String, ack: @escaping (String, AnyObject?) -> Void) {
         putOnListener(eventName: eventName, onListener: ack)
     }
     
-    public func onAck(eventName : String, ack : @escaping (String, AnyObject?, (AnyObject?, AnyObject?) -> Void) -> Void) {
+    public func onAck(eventName: String, ack: @escaping (String, AnyObject?, (AnyObject?, AnyObject?) -> Void) -> Void) {
         putOnAckListener(eventName: eventName, onAckListener: ack)
     }
     

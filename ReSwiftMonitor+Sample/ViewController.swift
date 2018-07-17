@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        numberLabel.text = 1000.description
     }
     
     override func viewWillAppear(_ animated: Bool) {
