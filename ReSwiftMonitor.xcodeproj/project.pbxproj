@@ -10,7 +10,6 @@
 		07068993518A1138B48B0144 /* Pods_ReSwiftMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525A5E8BF16CFD0ED1B68750 /* Pods_ReSwiftMonitor.framework */; };
 		1777819720228E41006D5E0A /* ReSwiftMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1777819520228E41006D5E0A /* ReSwiftMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1777819C20228E9B006D5E0A /* MonitorMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1777819B20228E9B006D5E0A /* MonitorMiddleware.swift */; };
-		177781A12022957B006D5E0A /* LoggingMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177781A02022957B006D5E0A /* LoggingMiddleware.swift */; };
 		177781A52023613A006D5E0A /* Serialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177781A42023613A006D5E0A /* Serialization.swift */; };
 		177781B220236A5F006D5E0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177781B120236A5F006D5E0A /* AppDelegate.swift */; };
 		177781B420236A5F006D5E0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177781B320236A5F006D5E0A /* ViewController.swift */; };
@@ -44,7 +43,6 @@
 		1777819520228E41006D5E0A /* ReSwiftMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReSwiftMonitor.h; sourceTree = "<group>"; };
 		1777819620228E41006D5E0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1777819B20228E9B006D5E0A /* MonitorMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorMiddleware.swift; sourceTree = "<group>"; };
-		177781A02022957B006D5E0A /* LoggingMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingMiddleware.swift; sourceTree = "<group>"; };
 		177781A42023613A006D5E0A /* Serialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serialization.swift; sourceTree = "<group>"; };
 		177781AF20236A5F006D5E0A /* ReSwiftMonitor+Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ReSwiftMonitor+Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		177781B120236A5F006D5E0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 				1777819520228E41006D5E0A /* ReSwiftMonitor.h */,
 				1777819620228E41006D5E0A /* Info.plist */,
 				1777819B20228E9B006D5E0A /* MonitorMiddleware.swift */,
-				177781A02022957B006D5E0A /* LoggingMiddleware.swift */,
 				177781A42023613A006D5E0A /* Serialization.swift */,
 			);
 			path = ReSwiftMonitor;
@@ -431,7 +428,6 @@
 				1777819C20228E9B006D5E0A /* MonitorMiddleware.swift in Sources */,
 				177781E72023D4F0006D5E0A /* ClientUtils.swift in Sources */,
 				177781A52023613A006D5E0A /* Serialization.swift in Sources */,
-				177781A12022957B006D5E0A /* LoggingMiddleware.swift in Sources */,
 				177781E52023D4F0006D5E0A /* Listener.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

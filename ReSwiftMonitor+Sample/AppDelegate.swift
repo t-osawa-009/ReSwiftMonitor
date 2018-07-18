@@ -12,8 +12,7 @@ import ReSwiftMonitor
 
 var middleware: [Middleware<AppState>] = {
     let monitorMiddleware = MonitorMiddleware.make(configuration: Configuration())
-    let loggingMiddleware = LoggingMiddleware.make(prefix: "[ReSwift]")
-    return [monitorMiddleware, loggingMiddleware]
+    return [monitorMiddleware]
 }()
 
 let store = Store<AppState>(reducer: AppState.reducer(), state: AppState(), middleware: middleware)
