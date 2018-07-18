@@ -3,17 +3,17 @@ import Foundation
 
 public class ScClient: Listener {
     // MARK: - property
-    var authToken : String?
-    var url : String?
-    var socket : WebSocket!
-    var counter : AtomicInteger
+    var authToken: String?
+    var url: String?
+    var socket: WebSocket!
+    var counter: AtomicInteger
     private(set)var socketId: String?
     
-    var onConnect : ((ScClient)-> Void)?
-    var onConnectError : ((ScClient, Error?)-> Void)?
-    var onDisconnect : ((ScClient, Error?)-> Void)?
-    var onSetAuthentication : ((ScClient, String?)-> Void)?
-    var onAuthentication : ((ScClient, Bool?)-> Void)?
+    var onConnect: ((ScClient) -> Void)?
+    var onConnectError: ((ScClient, Error?) -> Void)?
+    var onDisconnect: ((ScClient, Error?) -> Void)?
+    var onSetAuthentication: ((ScClient, String?) -> Void)?
+    var onAuthentication: ((ScClient, Bool?) -> Void)?
     
     // MARK: - init
     public init(url: String, authToken: String? = nil) {
@@ -27,27 +27,27 @@ public class ScClient: Listener {
     public init(urlRequest: URLRequest, authToken: String? = nil, protocols: [String]? = nil) {
         self.counter = AtomicInteger()
         self.authToken = authToken
-        self.socket = WebSocket(request: urlRequest, protocols : protocols)
+        self.socket = WebSocket(request: urlRequest, protocols: protocols)
         super.init()
         socket.delegate = self
     }
     
-     // MARK: - methods
-    public func setBasicListener(onConnect : ((ScClient)-> Void)?, onConnectError : ((ScClient, Error?)-> Void)?, onDisconnect : ((ScClient, Error?)-> Void)?) {
+    // MARK: - methods
+    public func setBasicListener(onConnect: ((ScClient) -> Void)?, onConnectError: ((ScClient, Error?) -> Void)?, onDisconnect: ((ScClient, Error?) -> Void)?) {
         self.onConnect = onConnect
         self.onDisconnect = onDisconnect
         self.onConnectError = onConnectError
     }
     
-    public func setAuthenticationListener (onSetAuthentication : ((ScClient, String?)-> Void)?, onAuthentication : ((ScClient, Bool?)-> Void)?) {
+    public func setAuthenticationListener (onSetAuthentication: ((ScClient, String?) -> Void)?, onAuthentication: ((ScClient, Bool?) -> Void)?) {
         self.onSetAuthentication = onSetAuthentication
         self.onAuthentication = onAuthentication
     }
     
-    public func setBackgroundQueue(queueName : String) {
+    public func setBackgroundQueue(queueName: String) {
         socket.callbackQueue = DispatchQueue(label: queueName)
     }
-
+    
     public func setWebSocket(with url: URL) {
         self.socket = WebSocket(url: url)
         socket.delegate = self
@@ -61,11 +61,11 @@ public class ScClient: Listener {
         return socket.isConnected
     }
     
-    public func setAuthToken(token : String) {
+    public func setAuthToken(token: String) {
         self.authToken = token
     }
     
-    public func getAuthToken () -> String? {
+    public func getAuthToken() -> String? {
         return self.authToken
     }
     
@@ -74,60 +74,60 @@ public class ScClient: Listener {
         socket.write(string: handshake.toJSONString()!)
     }
     
-    private func ack(cid : Int) -> (AnyObject?, AnyObject?) -> Void {
-        return  {
-            (error : AnyObject?, data : AnyObject?) in
+    private func ack(cid: Int) -> (AnyObject?, AnyObject?) -> Void {
+        return {
+            (error: AnyObject?, data: AnyObject?) in
             let ackObject = Model.getReceiveEventObject(data: data, error: error, messageId: cid)
             self.socket.write(string: ackObject.toJSONString()!)
         }
     }
     
-    public func emit(eventName : String, data : AnyObject?) {
+    public func emit(eventName: String, data: AnyObject?) {
         let emitObject = Model.getEmitEventObject(eventName: eventName, data: data, messageId: counter.incrementAndGet())
-        self.socket.write(string : emitObject.toJSONString()!)
+        self.socket.write(string: emitObject.toJSONString()!)
     }
     
-    public func emitAck(eventName : String, data : AnyObject?, ack : @escaping (String, AnyObject?, AnyObject?)-> Void) {
+    public func emitAck(eventName: String, data: AnyObject?, ack: @escaping (String, AnyObject?, AnyObject?) -> Void) {
         let id = counter.incrementAndGet()
         let emitObject = Model.getEmitEventObject(eventName: eventName, data: data, messageId: id)
         putEmitAck(id: id, eventName: eventName, ack: ack)
-        self.socket.write(string : emitObject.toJSONString()!)
+        self.socket.write(string: emitObject.toJSONString()!)
     }
     
-    public func subscribe(channelName : String) {
+    public func subscribe(channelName: String) {
         let subscribeObject = Model.getSubscribeEventObject(channelName: channelName, messageId: counter.incrementAndGet())
-        self.socket.write(string : subscribeObject.toJSONString()!)
+        self.socket.write(string: subscribeObject.toJSONString()!)
     }
     
-    public func subscribeAck(channelName : String, ack : @escaping (String, AnyObject?, AnyObject?)-> Void) {
+    public func subscribeAck(channelName: String, ack: @escaping (String, AnyObject?, AnyObject?) -> Void) {
         let id = counter.incrementAndGet()
         let subscribeObject = Model.getSubscribeEventObject(channelName: channelName, messageId: id)
         putEmitAck(id: id, eventName: channelName, ack: ack)
-        self.socket.write(string : subscribeObject.toJSONString()!)
+        self.socket.write(string: subscribeObject.toJSONString()!)
     }
     
-    public func unsubscribe(channelName : String) {
+    public func unsubscribe(channelName: String) {
         let unsubscribeObject = Model.getUnsubscribeEventObject(channelName: channelName, messageId: counter.incrementAndGet())
-        self.socket.write(string : unsubscribeObject.toJSONString()!)
+        self.socket.write(string: unsubscribeObject.toJSONString()!)
     }
     
-    public func unsubscribeAck(channelName : String, ack : @escaping (String, AnyObject?, AnyObject?)-> Void) {
+    public func unsubscribeAck(channelName: String, ack: @escaping (String, AnyObject?, AnyObject?) -> Void) {
         let id = counter.incrementAndGet()
         let unsubscribeObject = Model.getUnsubscribeEventObject(channelName: channelName, messageId: id)
         putEmitAck(id: id, eventName: channelName, ack: ack)
-        self.socket.write(string : unsubscribeObject.toJSONString()!)
+        self.socket.write(string: unsubscribeObject.toJSONString()!)
     }
     
-    public func publish(channelName: String, data : AnyObject?) {
+    public func publish(channelName: String, data: AnyObject?) {
         let publishObject = Model.getPublishEventObject(channelName: channelName, data: data, messageId: counter.incrementAndGet())
-        self.socket.write(string : publishObject.toJSONString()!)
+        self.socket.write(string: publishObject.toJSONString()!)
     }
     
-    public func publishAck(channelName: String, data : AnyObject?, ack : @escaping (String, AnyObject?, AnyObject?)-> Void) {
+    public func publishAck(channelName: String, data: AnyObject?, ack: @escaping (String, AnyObject?, AnyObject?) -> Void) {
         let id = counter.incrementAndGet()
         let publishObject = Model.getPublishEventObject(channelName: channelName, data: data, messageId: id)
         putEmitAck(id: id, eventName: channelName, ack: ack)
-        self.socket.write(string : publishObject.toJSONString()!)
+        self.socket.write(string: publishObject.toJSONString()!)
     }
     
     public func onChannel(channelName: String, ack: @escaping (String, AnyObject?) -> Void) {

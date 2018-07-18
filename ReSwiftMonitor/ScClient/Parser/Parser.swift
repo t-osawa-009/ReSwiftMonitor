@@ -9,7 +9,7 @@ public enum MessageType {
 
 public class Parser {
     
-    public static func parse(rid : Int?, cid : Int?, event : String?) -> MessageType {
+    public static func parse(rid: Int?, cid: Int?, event: String?) -> MessageType {
         if (event != nil) {
             if (event == "#publish") {
                 return MessageType.publish
@@ -27,7 +27,7 @@ public class Parser {
         }
     }
     
-    public static func getMessageDetails(myMessage : Any) -> (data: Any?, rid : Int?, cid : Int?, eventName : String?, error : Any?)? {
+    public static func getMessageDetails(myMessage: Any) -> (data: Any?, rid: Int?, cid: Int?, eventName: String?, error: Any?)? {
         if let messageItem = myMessage as? [String: Any] {
             let data = messageItem["data"]
             let rid = messageItem["rid"] as? Int
