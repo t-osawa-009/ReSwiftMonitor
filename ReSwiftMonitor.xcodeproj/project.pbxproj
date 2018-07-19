@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07068993518A1138B48B0144 /* Pods_ReSwiftMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525A5E8BF16CFD0ED1B68750 /* Pods_ReSwiftMonitor.framework */; };
 		1777819720228E41006D5E0A /* ReSwiftMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1777819520228E41006D5E0A /* ReSwiftMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1777819C20228E9B006D5E0A /* MonitorMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1777819B20228E9B006D5E0A /* MonitorMiddleware.swift */; };
 		177781A52023613A006D5E0A /* Serialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177781A42023613A006D5E0A /* Serialization.swift */; };
@@ -15,7 +14,6 @@
 		177781B420236A5F006D5E0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177781B320236A5F006D5E0A /* ViewController.swift */; };
 		177781B720236A5F006D5E0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 177781B520236A5F006D5E0A /* Main.storyboard */; };
 		177781B920236A5F006D5E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177781B820236A5F006D5E0A /* Assets.xcassets */; };
-		177781BC20236A5F006D5E0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 177781BA20236A5F006D5E0A /* LaunchScreen.storyboard */; };
 		177781C620236B92006D5E0A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177781C520236B92006D5E0A /* AppState.swift */; };
 		177781C820236CF4006D5E0A /* CounterAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177781C720236CF4006D5E0A /* CounterAction.swift */; };
 		177781E52023D4F0006D5E0A /* Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177781DB2023D4F0006D5E0A /* Listener.swift */; };
@@ -25,7 +23,18 @@
 		177781E92023D4F0006D5E0A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177781E12023D4F0006D5E0A /* Event.swift */; };
 		177781EA2023D4F0006D5E0A /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177781E32023D4F0006D5E0A /* Parser.swift */; };
 		177781EB2023D4F0006D5E0A /* ScClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177781E42023D4F0006D5E0A /* ScClient.swift */; };
-		183FF5951F1E375A543FABC4 /* Pods_ReSwiftMonitor_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366D2FC8CAFB797EEA0CA554 /* Pods_ReSwiftMonitor_Sample.framework */; };
+		177D8EDA2100A53D004DE2C0 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177D8ED72100A53C004DE2C0 /* ReSwift.framework */; };
+		177D8EDE2100A5AA004DE2C0 /* HandyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177D8ED82100A53D004DE2C0 /* HandyJSON.framework */; };
+		177D8EDF2100A5AA004DE2C0 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177D8ED72100A53C004DE2C0 /* ReSwift.framework */; };
+		177D8EE02100A5AA004DE2C0 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177D8ED92100A53D004DE2C0 /* Starscream.framework */; };
+		177D8EE22100A747004DE2C0 /* HandyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177D8ED82100A53D004DE2C0 /* HandyJSON.framework */; };
+		177D8EE32100A747004DE2C0 /* HandyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 177D8ED82100A53D004DE2C0 /* HandyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		177D8EE52100A748004DE2C0 /* ReSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 177D8ED72100A53C004DE2C0 /* ReSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		177D8EE62100A748004DE2C0 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177D8ED92100A53D004DE2C0 /* Starscream.framework */; };
+		177D8EE72100A748004DE2C0 /* Starscream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 177D8ED92100A53D004DE2C0 /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		177D8EE92100A756004DE2C0 /* ReSwiftMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1777819320228E41006D5E0A /* ReSwiftMonitor.framework */; };
+		177D8EEA2100A756004DE2C0 /* ReSwiftMonitor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1777819320228E41006D5E0A /* ReSwiftMonitor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		177D8EED2100A80B004DE2C0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 177D8EEC2100A80B004DE2C0 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +47,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		177D8EE82100A748004DE2C0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				177D8EEA2100A756004DE2C0 /* ReSwiftMonitor.framework in Embed Frameworks */,
+				177D8EE32100A747004DE2C0 /* HandyJSON.framework in Embed Frameworks */,
+				177D8EE72100A748004DE2C0 /* Starscream.framework in Embed Frameworks */,
+				177D8EE52100A748004DE2C0 /* ReSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1777819320228E41006D5E0A /* ReSwiftMonitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReSwiftMonitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1777819520228E41006D5E0A /* ReSwiftMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReSwiftMonitor.h; sourceTree = "<group>"; };
@@ -49,7 +75,6 @@
 		177781B320236A5F006D5E0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		177781B620236A5F006D5E0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		177781B820236A5F006D5E0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		177781BB20236A5F006D5E0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		177781BD20236A5F006D5E0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		177781C520236B92006D5E0A /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		177781C720236CF4006D5E0A /* CounterAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAction.swift; sourceTree = "<group>"; };
@@ -60,12 +85,10 @@
 		177781E12023D4F0006D5E0A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		177781E32023D4F0006D5E0A /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		177781E42023D4F0006D5E0A /* ScClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScClient.swift; sourceTree = "<group>"; };
-		34E5E3A577AF0A0B6E8A24F4 /* Pods-ReSwiftMonitor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReSwiftMonitor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReSwiftMonitor/Pods-ReSwiftMonitor.debug.xcconfig"; sourceTree = "<group>"; };
-		366D2FC8CAFB797EEA0CA554 /* Pods_ReSwiftMonitor_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReSwiftMonitor_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		525A5E8BF16CFD0ED1B68750 /* Pods_ReSwiftMonitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReSwiftMonitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		63E5DB233832240CA0B229F4 /* Pods-ReSwiftMonitor+Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReSwiftMonitor+Sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReSwiftMonitor+Sample/Pods-ReSwiftMonitor+Sample.debug.xcconfig"; sourceTree = "<group>"; };
-		A81DE8213A0AAF8C4EAE6F42 /* Pods-ReSwiftMonitor+Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReSwiftMonitor+Sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReSwiftMonitor+Sample/Pods-ReSwiftMonitor+Sample.release.xcconfig"; sourceTree = "<group>"; };
-		B26AB83C1F6947B6AC657C44 /* Pods-ReSwiftMonitor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReSwiftMonitor.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReSwiftMonitor/Pods-ReSwiftMonitor.release.xcconfig"; sourceTree = "<group>"; };
+		177D8ED72100A53C004DE2C0 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
+		177D8ED82100A53D004DE2C0 /* HandyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HandyJSON.framework; path = Carthage/Build/iOS/HandyJSON.framework; sourceTree = "<group>"; };
+		177D8ED92100A53D004DE2C0 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
+		177D8EEC2100A80B004DE2C0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +96,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07068993518A1138B48B0144 /* Pods_ReSwiftMonitor.framework in Frameworks */,
+				177D8EDE2100A5AA004DE2C0 /* HandyJSON.framework in Frameworks */,
+				177D8EDF2100A5AA004DE2C0 /* ReSwift.framework in Frameworks */,
+				177D8EE02100A5AA004DE2C0 /* Starscream.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +106,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				183FF5951F1E375A543FABC4 /* Pods_ReSwiftMonitor_Sample.framework in Frameworks */,
+				177D8EDA2100A53D004DE2C0 /* ReSwift.framework in Frameworks */,
+				177D8EE92100A756004DE2C0 /* ReSwiftMonitor.framework in Frameworks */,
+				177D8EE62100A748004DE2C0 /* Starscream.framework in Frameworks */,
+				177D8EE22100A747004DE2C0 /* HandyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,10 +119,10 @@
 		177780FC20228B1C006D5E0A = {
 			isa = PBXGroup;
 			children = (
+				177D8EEC2100A80B004DE2C0 /* Default-568h@2x.png */,
 				1777819420228E41006D5E0A /* ReSwiftMonitor */,
 				177781B020236A5F006D5E0A /* ReSwiftMonitor+Sample */,
 				1777810620228B1C006D5E0A /* Products */,
-				D9D5FB3700BB5D54A2BA679F /* Pods */,
 				6380827EEB58ED91EBC2806D /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -128,7 +156,6 @@
 				177781B320236A5F006D5E0A /* ViewController.swift */,
 				177781B520236A5F006D5E0A /* Main.storyboard */,
 				177781B820236A5F006D5E0A /* Assets.xcassets */,
-				177781BA20236A5F006D5E0A /* LaunchScreen.storyboard */,
 				177781BD20236A5F006D5E0A /* Info.plist */,
 				177781C520236B92006D5E0A /* AppState.swift */,
 				177781C720236CF4006D5E0A /* CounterAction.swift */,
@@ -192,21 +219,11 @@
 		6380827EEB58ED91EBC2806D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				525A5E8BF16CFD0ED1B68750 /* Pods_ReSwiftMonitor.framework */,
-				366D2FC8CAFB797EEA0CA554 /* Pods_ReSwiftMonitor_Sample.framework */,
+				177D8ED82100A53D004DE2C0 /* HandyJSON.framework */,
+				177D8ED72100A53C004DE2C0 /* ReSwift.framework */,
+				177D8ED92100A53D004DE2C0 /* Starscream.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D9D5FB3700BB5D54A2BA679F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				34E5E3A577AF0A0B6E8A24F4 /* Pods-ReSwiftMonitor.debug.xcconfig */,
-				B26AB83C1F6947B6AC657C44 /* Pods-ReSwiftMonitor.release.xcconfig */,
-				63E5DB233832240CA0B229F4 /* Pods-ReSwiftMonitor+Sample.debug.xcconfig */,
-				A81DE8213A0AAF8C4EAE6F42 /* Pods-ReSwiftMonitor+Sample.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,12 +244,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1777819820228E41006D5E0A /* Build configuration list for PBXNativeTarget "ReSwiftMonitor" */;
 			buildPhases = (
-				B41C7BA563CFAF2C8208F66A /* [CP] Check Pods Manifest.lock */,
 				1777818E20228E41006D5E0A /* Sources */,
 				1777818F20228E41006D5E0A /* Frameworks */,
 				1777819020228E41006D5E0A /* Headers */,
 				1777819120228E41006D5E0A /* Resources */,
-				8EAA94C13ED3AD1AA93F44CE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -247,12 +262,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 177781C120236A5F006D5E0A /* Build configuration list for PBXNativeTarget "ReSwiftMonitor+Sample" */;
 			buildPhases = (
-				F321C9506D755F89B5C88B67 /* [CP] Check Pods Manifest.lock */,
 				177781AB20236A5F006D5E0A /* Sources */,
 				177781AC20236A5F006D5E0A /* Frameworks */,
 				177781AD20236A5F006D5E0A /* Resources */,
-				BB2BB16149394FC069F41C85 /* [CP] Embed Pods Frameworks */,
-				BD8059D23BF2F356F40466D0 /* [CP] Copy Pods Resources */,
+				177D8EE82100A748004DE2C0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -271,7 +284,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Takuya Ohsawa";
 				TargetAttributes = {
 					1777819220228E41006D5E0A = {
@@ -316,104 +329,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				177781BC20236A5F006D5E0A /* LaunchScreen.storyboard in Resources */,
 				177781B920236A5F006D5E0A /* Assets.xcassets in Resources */,
 				177781B720236A5F006D5E0A /* Main.storyboard in Resources */,
+				177D8EED2100A80B004DE2C0 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		8EAA94C13ED3AD1AA93F44CE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReSwiftMonitor/Pods-ReSwiftMonitor-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B41C7BA563CFAF2C8208F66A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ReSwiftMonitor-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BB2BB16149394FC069F41C85 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ReSwiftMonitor+Sample/Pods-ReSwiftMonitor+Sample-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReSwiftMonitor+Sample/Pods-ReSwiftMonitor+Sample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BD8059D23BF2F356F40466D0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReSwiftMonitor+Sample/Pods-ReSwiftMonitor+Sample-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F321C9506D755F89B5C88B67 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ReSwiftMonitor+Sample-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1777818E20228E41006D5E0A /* Sources */ = {
@@ -462,14 +384,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		177781BA20236A5F006D5E0A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				177781BB20236A5F006D5E0A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -487,6 +401,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -494,6 +409,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -544,6 +460,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -551,6 +468,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -582,7 +500,6 @@
 		};
 		1777819920228E41006D5E0A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34E5E3A577AF0A0B6E8A24F4 /* Pods-ReSwiftMonitor.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -594,8 +511,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				INFOPLIST_FILE = ReSwiftMonitor/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = apps.ReSwiftMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -611,7 +530,6 @@
 		};
 		1777819A20228E41006D5E0A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B26AB83C1F6947B6AC657C44 /* Pods-ReSwiftMonitor.release.xcconfig */;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -623,8 +541,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				INFOPLIST_FILE = ReSwiftMonitor/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = apps.ReSwiftMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -639,15 +559,20 @@
 		};
 		177781BE20236A5F006D5E0A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 63E5DB233832240CA0B229F4 /* Pods-ReSwiftMonitor+Sample.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				INFOPLIST_FILE = "ReSwiftMonitor+Sample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "apps.ReSwiftMonitor-Sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -655,15 +580,20 @@
 		};
 		177781BF20236A5F006D5E0A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A81DE8213A0AAF8C4EAE6F42 /* Pods-ReSwiftMonitor+Sample.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				INFOPLIST_FILE = "ReSwiftMonitor+Sample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "apps.ReSwiftMonitor-Sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
