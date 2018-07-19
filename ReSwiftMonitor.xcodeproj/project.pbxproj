@@ -120,7 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				177D8EEC2100A80B004DE2C0 /* Default-568h@2x.png */,
-				1777819420228E41006D5E0A /* ReSwiftMonitor */,
+				1777819420228E41006D5E0A /* Sources */,
 				177781B020236A5F006D5E0A /* ReSwiftMonitor+Sample */,
 				1777810620228B1C006D5E0A /* Products */,
 				6380827EEB58ED91EBC2806D /* Frameworks */,
@@ -136,7 +136,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1777819420228E41006D5E0A /* ReSwiftMonitor */ = {
+		1777819420228E41006D5E0A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				177781D92023D4F0006D5E0A /* ScClient */,
@@ -146,7 +146,7 @@
 				1777819B20228E9B006D5E0A /* MonitorMiddleware.swift */,
 				177781A42023613A006D5E0A /* Serialization.swift */,
 			);
-			path = ReSwiftMonitor;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		177781B020236A5F006D5E0A /* ReSwiftMonitor+Sample */ = {
@@ -512,7 +512,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
-				INFOPLIST_FILE = ReSwiftMonitor/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -542,7 +542,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
-				INFOPLIST_FILE = ReSwiftMonitor/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
