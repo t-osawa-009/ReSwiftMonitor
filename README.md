@@ -48,9 +48,11 @@ let store = Store<AppState>(reducer: AppState.reducer(), state: AppState(), midd
 * Launch `remotedev` in your terminal
 * Launch your Reswift application
 
-#### Dependencies library
+#### Libraries Used
 - [sacOO7/socketcluster-client-swift](https://github.com/sacOO7/socketcluster-client-swift)
 - [ReSwift](https://github.com/ReSwift/ReSwift)
+- [HandyJSON](https://github.com/alibaba/HandyJSON)
+- [Starscream](https://github.com/daltoniam/Starscream)
 
 ### License
 
