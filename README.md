@@ -30,12 +30,12 @@ In your application, conditionally add the middleware. Here, for instance, we us
 
 ```swift
 var middleware: [Middleware<AppState>] = {
-	var _middleware: [Middleware<AppState>] = []
-	#if DEBUG
-	    let monitorMiddleware = MonitorMiddleware.make(configuration: Configuration())
-		middleware.append(MonitorMiddleware.create(using: .defaultConfiguration))
-	#endif
-    return [monitorMiddleware]
+    var _middleware: [Middleware<AppState>] = []
+    #if DEBUG
+    let monitorMiddleware = MonitorMiddleware.make(configuration: Configuration())
+    _middleware.append(monitorMiddleware)
+    #endif
+    return _middleware
 }()
 
 let store = Store<AppState>(reducer: AppState.reducer(), state: AppState(), middleware: middleware)
