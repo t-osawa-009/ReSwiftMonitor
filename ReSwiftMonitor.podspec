@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ReSwiftMonitor"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "ReSwift+redeux dev tools"
   s.homepage     = "https://github.com/takuchantuyoshi/ReSwiftMonitor"
   s.license      = { :type => "MIT", :file => "LICENSE.md" }
@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
   s.requires_arc          = true
   s.source_files = "Sources/**/*.{swift}", "Sources/*.{swift,h}"
   s.dependency 'ReSwift', '~> 4.0.0'
-  s.dependency 'HandyJSON', '~> 4.1.1'
+  s.dependency 'HandyJSON', '~> 4.2.0'
   s.dependency 'Starscream', '~> 3.0.2'
 end

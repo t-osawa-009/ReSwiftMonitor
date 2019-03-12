@@ -44,7 +44,7 @@ open class JSONSerializer {
     - throws: Throws error of type JSONSerializerError. Either JsonIsNotValid or JsonIsNotDictionary. JsonIsNotDictionary will typically be thrown if you try to parse an array of JSON objects.
     - returns: A NSDictionary representation of the JSON string.
     */
-    open static func toDictionary(_ jsonString: String) throws -> NSDictionary {
+    public static func toDictionary(_ jsonString: String) throws -> NSDictionary {
         if let dictionary = try jsonToAnyObject(jsonString) as? NSDictionary {
             return dictionary
         } else {
@@ -58,7 +58,7 @@ open class JSONSerializer {
     - throws: Throws error of type JSONSerializerError. Either JsonIsNotValid or JsonIsNotArray. JsonIsNotArray will typically be thrown if you try to parse a single JSON object.
     - returns: NSArray representation of the JSON objects.
     */
-    open static func toArray(_ jsonString: String) throws -> NSArray {
+    public static func toArray(_ jsonString: String) throws -> NSArray {
         if let array = try jsonToAnyObject(jsonString) as? NSArray {
             return array
         } else {
@@ -93,7 +93,7 @@ open class JSONSerializer {
     - parameter object:	The instantiation of any custom class to be represented as JSON.
     - returns: A string JSON representation of the object.
     */
-    open static func toJson(_ object: Any, prettify: Bool = false) -> String {
+    public static func toJson(_ object: Any, prettify: Bool = false) -> String {
         var json = ""
         if (!(object is Array<Any>)) {
             json += "{"
