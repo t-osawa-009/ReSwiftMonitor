@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.0.5](https://github.com/takuchantuyoshi/ReSwiftMonitor/tree/0.0.5) (2019-03-22)
+[Full Changelog](https://github.com/takuchantuyoshi/ReSwiftMonitor/compare/0.0.4...0.0.5)
+
+**Merged pull requests:**
+
+- 🔖: update ReSwift [\#4](https://github.com/takuchantuyoshi/ReSwiftMonitor/pull/4) ([takuchantuyoshi](https://github.com/takuchantuyoshi))
+- 📝 : add CHANGELOG [\#3](https://github.com/takuchantuyoshi/ReSwiftMonitor/pull/3) ([takuchantuyoshi](https://github.com/takuchantuyoshi))
+
 ## [0.0.4](https://github.com/takuchantuyoshi/ReSwiftMonitor/tree/0.0.4) (2019-03-12)
 [Full Changelog](https://github.com/takuchantuyoshi/ReSwiftMonitor/compare/0.0.3...0.0.4)
 
