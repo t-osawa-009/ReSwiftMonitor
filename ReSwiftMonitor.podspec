@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "9.0"
   s.requires_arc          = true
   s.source_files = "Sources/**/*.{swift}", "Sources/*.{swift,h}"
-  s.dependency 'ReSwift', '~> 4.0.0'
+  s.dependency 'ReSwift', '~> 4.1.0'
   s.dependency 'HandyJSON', '~> 4.2.0'
   s.dependency 'Starscream', '~> 3.0.2'
 end
