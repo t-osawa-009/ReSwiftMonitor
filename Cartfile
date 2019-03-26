@@ -1,3 +1,3 @@
 github "ReSwift/ReSwift" ~> 4.1.0
-github "alibaba/HandyJSON" ~> 4.2.0
-github "daltoniam/Starscream" >= 3.0.2
+github "alibaba/HandyJSON" == 5.0.0-beta
+github "daltoniam/Starscream" >= 3.1.0
