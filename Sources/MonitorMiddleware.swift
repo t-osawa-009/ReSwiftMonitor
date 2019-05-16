@@ -79,7 +79,7 @@ fileprivate class SendActionInfoOperation: Operation {
         
         if var _serializedAction = serializedAction as? [String: Any] {
             // add type to nicely show the action name in the UI
-            _serializedAction["type"] = String(reflecting: type(of: self.action))
+            _serializedAction["type"] = typeString(action: self.action)
             serializedAction = _serializedAction
         }
         
@@ -99,4 +99,18 @@ fileprivate class SendActionInfoOperation: Operation {
         
         client.emit(eventName: "log", data: data as AnyObject)
     }
+    
+    private func typeString(action: Action) -> String {
+        let mirror = Mirror(reflecting: action)
+        if mirror.displayStyle == .enum {
+            let str = String(reflecting: action)
+            if let firstSegment = str.split(separator: ":").first {
+                return String(firstSegment) + "..."
+            }
+            return str
+        }
+        
+        return String(reflecting: type(of: action))
+    }
 }
+

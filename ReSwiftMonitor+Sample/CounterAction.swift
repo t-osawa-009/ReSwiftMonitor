@@ -13,3 +13,7 @@ struct CounterAction {
     struct Increase: Action {}
     struct Decrease: Action {}
 }
+
+enum CounterActionEnum: Action {
+    case decrease(val: Int)
+}
