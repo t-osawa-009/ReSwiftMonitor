@@ -12,4 +12,5 @@ Pod::Spec.new do |s|
   s.dependency 'ReSwift', '~> 4.1.0'
   s.dependency 'HandyJSON', '~> 5.0.0'
   s.dependency 'Starscream', '~> 3.1.0'
+  s.swift_version = '5.0'
 end
