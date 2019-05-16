@@ -48,9 +48,9 @@ struct MonitorSerialization {
         }
         
         let mirror = Mirror(reflecting: value)
-        
-        guard mirror.displayStyle == .struct else {
-            return String(reflecting: value)
+        guard mirror.displayStyle == .struct ||
+            mirror.displayStyle == .enum else {
+                return String(reflecting: value)
         }
         
         var result: [String: Any] = [:]

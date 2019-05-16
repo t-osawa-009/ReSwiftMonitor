@@ -36,6 +36,14 @@ class ViewController: UIViewController {
         store.dispatch(CounterAction.Increase())
     }
     
+    @IBAction func mainasuEnumButtonTapped(_ sender: UIButton) {
+        store.dispatch(CounterActionEnum.decrease(val: -1))
+    }
+    
+    @IBAction func plusEnumButtonTapped(_ sender: UIButton) {
+        store.dispatch(CounterActionEnum.decrease(val: 1))
+    }
+    
 }
 
 extension ViewController: StoreSubscriber {
