@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ReSwiftMonitor"
-  s.version      = "0.0.5"
+  s.version      = "0.0.6"
   s.summary      = "ReSwift+redeux dev tools"
   s.homepage     = "https://github.com/takuchantuyoshi/ReSwiftMonitor"
   s.license      = { :type => "MIT", :file => "LICENSE.md" }
