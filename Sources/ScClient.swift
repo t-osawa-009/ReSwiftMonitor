@@ -145,6 +145,18 @@ public class ScClient: Listener {
     public func disconnect() {
         socket.disconnect()
     }
+    
+    public func disableSSLVerification(value : Bool) {
+        socket.disableSSLCertValidation = value
+    }
+    
+    public func useSSLCertificate() {
+        socket.security = SSLSecurity()
+    }
+    
+    public func loadSSLCertificateFromData(data: Data, usePublicKeys: Bool = false) {
+        socket.security = SSLSecurity(certs: [SSLCert(data: data)], usePublicKeys: usePublicKeys)
+    }
 }
 
 // MARK: - WebSocketDelegate
