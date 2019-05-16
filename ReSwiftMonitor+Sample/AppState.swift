@@ -24,6 +24,10 @@ extension AppState {
                 state.counter += 1
             case _ as CounterAction.Decrease:
                 state.counter -= 1
+            case let action as CounterActionEnum:
+                if case .decrease(let value) = action {
+                    state.counter += value
+                }
             default:
                 break
             }
