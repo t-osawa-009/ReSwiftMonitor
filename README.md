@@ -3,6 +3,8 @@
 [ReSwift](https://github.com/ReSwift/ReSwift) middleware that can be used to communicate with redux-dev tools. It has been tested with  [http://remotedev.io/local/](http://remotedev.io/local/), but it should work with [other monitors]( https://github.com/zalmoxisus/remote-redux-devtools#monitoring) too.
 This project is heavily inspired by the [katanaMonitor-lib-swift](https://github.com/bolismauro/katanaMonitor-lib-swift). 
 
+![gif](https://github.com/takuchantuyoshi/ReSwiftMonitor/blob/master/GIF/reswiftmonitor_sample.gif?raw=true)
+
 #### Dependencies 
 
 Install the remotedev node server once:
