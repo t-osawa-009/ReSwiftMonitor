@@ -27,7 +27,6 @@
 		177D8EE72100A748004DE2C0 /* Starscream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 177D8ED92100A53D004DE2C0 /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		177D8EE92100A756004DE2C0 /* ReSwiftMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1777819320228E41006D5E0A /* ReSwiftMonitor.framework */; };
 		177D8EEA2100A756004DE2C0 /* ReSwiftMonitor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1777819320228E41006D5E0A /* ReSwiftMonitor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		177D8EED2100A80B004DE2C0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 177D8EEC2100A80B004DE2C0 /* Default-568h@2x.png */; };
 		177D8EEF21014B17004DE2C0 /* ScClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D8EEE21014B17004DE2C0 /* ScClient.swift */; };
 		177D8EFC21014B4D004DE2C0 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D8EF121014B4C004DE2C0 /* Event.swift */; };
 		177D8EFD21014B4D004DE2C0 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D8EF321014B4C004DE2C0 /* Parser.swift */; };
@@ -37,6 +36,7 @@
 		177D8F0121014B4D004DE2C0 /* JSONStringify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D8EF821014B4D004DE2C0 /* JSONStringify.swift */; };
 		177D8F0221014B4D004DE2C0 /* Miscellaneous.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D8EF921014B4D004DE2C0 /* Miscellaneous.swift */; };
 		177D8F0321014B4D004DE2C0 /* Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D8EFB21014B4D004DE2C0 /* Listener.swift */; };
+		17B5D26E22D0D9CF000401CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17B5D26D22D0D9CF000401CE /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +83,6 @@
 		177D8ED72100A53C004DE2C0 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
 		177D8ED82100A53D004DE2C0 /* HandyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HandyJSON.framework; path = Carthage/Build/iOS/HandyJSON.framework; sourceTree = "<group>"; };
 		177D8ED92100A53D004DE2C0 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
-		177D8EEC2100A80B004DE2C0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		177D8EEE21014B17004DE2C0 /* ScClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScClient.swift; sourceTree = "<group>"; };
 		177D8EF121014B4C004DE2C0 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		177D8EF321014B4C004DE2C0 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
@@ -93,6 +92,7 @@
 		177D8EF821014B4D004DE2C0 /* JSONStringify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONStringify.swift; sourceTree = "<group>"; };
 		177D8EF921014B4D004DE2C0 /* Miscellaneous.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Miscellaneous.swift; sourceTree = "<group>"; };
 		177D8EFB21014B4D004DE2C0 /* Listener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Listener.swift; sourceTree = "<group>"; };
+		17B5D26D22D0D9CF000401CE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +123,6 @@
 		177780FC20228B1C006D5E0A = {
 			isa = PBXGroup;
 			children = (
-				177D8EEC2100A80B004DE2C0 /* Default-568h@2x.png */,
 				1777819420228E41006D5E0A /* Sources */,
 				177781B020236A5F006D5E0A /* ReSwiftMonitor+Sample */,
 				1777810620228B1C006D5E0A /* Products */,
@@ -166,6 +165,7 @@
 				177781BD20236A5F006D5E0A /* Info.plist */,
 				177781C520236B92006D5E0A /* AppState.swift */,
 				177781C720236CF4006D5E0A /* CounterAction.swift */,
+				17B5D26D22D0D9CF000401CE /* LaunchScreen.storyboard */,
 			);
 			path = "ReSwiftMonitor+Sample";
 			sourceTree = "<group>";
@@ -320,9 +320,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17B5D26E22D0D9CF000401CE /* LaunchScreen.storyboard in Resources */,
 				177781B920236A5F006D5E0A /* Assets.xcassets in Resources */,
 				177781B720236A5F006D5E0A /* Main.storyboard in Resources */,
-				177D8EED2100A80B004DE2C0 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
