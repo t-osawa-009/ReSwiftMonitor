@@ -18,10 +18,15 @@ Run the server (every time you want to use the monitor)
 #### Project Integration
 The monitor is shipped using Cocoapods.
 
+##### Pod
 Add the pod `ReSwiftMonitor`
 
 ```ruby
 pod 'ReSwiftMonitor', :configurations => ['Debug']
+```
+##### Carthage
+```
+github "takuchantuyoshi/ReSwiftMonitor"
 ```
 
 The middleware should be used in debug configurations only.
