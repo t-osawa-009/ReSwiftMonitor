@@ -49,7 +49,7 @@ public struct MonitorMiddleware {
             guard let url = configuration.url else {
                 fatalError("不正なURL")
             }
-            let client = ScClient(url: url.absoluteString)
+            let client = ScClient(url: url)
             client.connect()
             return { next in
                 return { action in
