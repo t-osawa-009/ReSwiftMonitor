@@ -61,6 +61,9 @@ let store = Store<AppState>(reducer: AppState.reducer(), state: AppState(), midd
 - [HandyJSON](https://github.com/alibaba/HandyJSON)
 - [Starscream](https://github.com/daltoniam/Starscream)
 
+### Contributing
+There's still a lot of work to do here. We would love to see you involved. You can find all the details on how to get started in the [Contributing Guide](https://github.com/t-osawa-009/ReSwiftMonitor/blob/master/CONTRIBUTING.md).
+
 ### License
 
 ReSwiftMonitor is released under the MIT license. See LICENSE for details.
