@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.requires_arc          = true
   s.source_files = "Sources/**/*.{swift}", "Sources/*.{swift,h}"
   s.dependency 'ReSwift', '~> 5.0.0'
-  s.dependency 'HandyJSON', '~> 5.0.0'
-  s.dependency 'Starscream', '~> 3.1.0'
+  s.dependency 'HandyJSON', '~> 5.0.1'
+  s.dependency 'Starscream', '3.1.1'
   s.swift_version = '5.0'
 end
