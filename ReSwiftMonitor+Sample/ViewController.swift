@@ -10,12 +10,12 @@ import UIKit
 import ReSwift
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet private weak var numberLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        numberLabel.text = 1000.description
+        numberLabel.text = "0"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +48,6 @@ class ViewController: UIViewController {
 
 extension ViewController: StoreSubscriber {
     func newState(state: AppState) {
-        numberLabel.text = state.counter.description
+        numberLabel.text = "\(state.counter)"
     }
 }
