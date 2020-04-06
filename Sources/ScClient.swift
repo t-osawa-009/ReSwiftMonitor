@@ -16,10 +16,10 @@ public class ScClient: Listener {
     var onAuthentication: ((ScClient, Bool?) -> Void)?
     
     // MARK: - init
-    public init(url: String, authToken: String? = nil) {
+    public init(url: URL, authToken: String? = nil) {
         self.counter = AtomicInteger()
         self.authToken = authToken
-        self.socket = WebSocket(url: URL(string: url)!)
+        self.socket = WebSocket(url: url)
         super.init()
         socket.delegate = self
     }
