@@ -26,7 +26,7 @@ pod 'ReSwiftMonitor', :configurations => ['Debug']
 ```
 ##### Carthage
 ```
-github "takuchantuyoshi/ReSwiftMonitor"
+github "t-osawa-009/ReSwiftMonitor"
 ```
 
 The middleware should be used in debug configurations only.
