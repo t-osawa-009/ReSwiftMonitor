@@ -4,6 +4,7 @@ import MultipeerConnectivity
 
 public struct BrowserMiddleware {
     public static func make() -> Middleware<StateType> {
+        MultipeerConnectivityWrapper.shared.start()
         return { dispatch, fetchState in
             return { next in
                 return { action in
@@ -43,9 +44,6 @@ private enum ActionSender {
         let mirror = Mirror(reflecting: action)
         if mirror.displayStyle == .enum {
             let str = String(reflecting: action)
-            if let firstSegment = str.split(separator: ":").first {
-                return String(firstSegment) + "..."
-            }
             return str
         }
         

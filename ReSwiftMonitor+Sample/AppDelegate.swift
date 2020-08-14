@@ -12,7 +12,8 @@ import ReSwiftMonitor
 
 var middleware: [Middleware<AppState>] = {
     let monitorMiddleware = MonitorMiddleware.make(configuration: Configuration())
-    return [monitorMiddleware]
+    let browserMiddleware = BrowserMiddleware.make()
+    return [monitorMiddleware, browserMiddleware]
 }()
 
 let store = Store<AppState>(reducer: AppState.reducer(), state: AppState(), middleware: middleware)
