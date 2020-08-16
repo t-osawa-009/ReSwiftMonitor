@@ -11,7 +11,13 @@ import ReSwift
 
 struct CounterAction {
     struct Increase: Action {}
+    struct Increase2: Action {
+        let value: Int
+    }
     struct Decrease: Action {}
+    struct Decrease2: Action {
+        let value: Int
+    }
 }
 
 enum CounterActionEnum: Action {

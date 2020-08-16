@@ -3,27 +3,29 @@ import ReSwift
 import MultipeerConnectivity
 
 public struct BrowserMiddleware {
-    public static func make() -> Middleware<StateType> {
-        MultipeerConnectivityWrapper.shared.start()
+    private let multipeerConnectivityWrapper: MultipeerConnectivityWrapper
+    public init(serviceType: String? = nil) {
+        self.multipeerConnectivityWrapper = .init(serviceType: serviceType ?? Constants.defaultServiceType)
+    }
+    
+    public func make() -> Middleware<StateType> {
         return { dispatch, fetchState in
             return { next in
                 return { action in
                     next(action)
-                    ActionSender.send(state: fetchState()!, action: action)
+                    self.send(state: fetchState()!, action: action)
                 }
             }
         }
     }
-}
-
-private enum ActionSender {
-    static func send(state: StateType, action: Action) {
+    
+    private func send(state: StateType, action: Action) {
         let serializedState = MonitorSerialization.convertValueToDictionary(state)
         var serializedAction = MonitorSerialization.convertValueToDictionary(action)
         
         if var _serializedAction = serializedAction as? [String: Any] {
             // add type to nicely show the action name in the UI
-            _serializedAction["type"] = typeString(action: action)
+            _serializedAction["type"] = Self.typeString(action: action)
             serializedAction = _serializedAction
         }
         
@@ -35,9 +37,9 @@ private enum ActionSender {
         
         guard JSONSerialization.isValidJSONObject(data),
             let json = try? JSONSerialization.data(withJSONObject: data, options: .prettyPrinted) else {
-            return
+                return
         }
-        MultipeerConnectivityWrapper.shared.send(data: json)
+        multipeerConnectivityWrapper.send(data: json)
     }
     
     private static func typeString(action: Action) -> String {
@@ -51,10 +53,8 @@ private enum ActionSender {
     }
 }
 
-
-
 private struct Constants {
-    static let serviceType = "rebrowser"
+    static let defaultServiceType = "rebrowser"
 }
 
 private enum SessionState: String {
@@ -65,8 +65,6 @@ private enum SessionState: String {
 
 private final class MultipeerConnectivityWrapper: NSObject {
     // MARK: - internal
-    static let shared = MultipeerConnectivityWrapper()
-    
     func start() {
         advertiserAssistant.delegate = self
         advertiserAssistant.start()
@@ -126,26 +124,34 @@ private final class MultipeerConnectivityWrapper: NSObject {
     // MARK: - initializer
     private override init() {
         peerID = .init(displayName: UIDevice.current.name)
+        super.init()
+    }
+    
+    convenience init(serviceType: String) {
+        self.init()
+        setup(serviceType: serviceType)
+    }
+    
+    func setup(serviceType: String) {
         nearbyServiceBrowser = .init(peer: peerID,
-                                     serviceType: Constants.serviceType)
+                                     serviceType: serviceType)
         session = .init(peer: peerID)
-        advertiserAssistant = .init(serviceType: Constants.serviceType,
+        advertiserAssistant = .init(serviceType: serviceType,
                                     discoveryInfo: nil,
                                     session: session)
         nearbyServiceAdvertiser = MCNearbyServiceAdvertiser(peer: peerID,
                                                             discoveryInfo: nil,
-                                                            serviceType: Constants.serviceType)
-        super.init()
+                                                            serviceType: serviceType)
         session.delegate = self
         start()
     }
     
     // MARK: - private
     private var peerID: MCPeerID
-    private var nearbyServiceBrowser: MCNearbyServiceBrowser
-    private var session: MCSession
-    private var advertiserAssistant: MCAdvertiserAssistant
-    private var nearbyServiceAdvertiser: MCNearbyServiceAdvertiser
+    private var nearbyServiceBrowser: MCNearbyServiceBrowser!
+    private var session: MCSession!
+    private var advertiserAssistant: MCAdvertiserAssistant!
+    private var nearbyServiceAdvertiser: MCNearbyServiceAdvertiser!
     private(set) var state: SessionState = .notConnected
     private var pendingData: [Data] = []
 }

@@ -11,7 +11,6 @@ import ReSwift
 
 struct AppState: StateType {
     var counter: Int = 0
-
 }
 
 extension AppState {
@@ -24,6 +23,10 @@ extension AppState {
                 state.counter += 1
             case _ as CounterAction.Decrease:
                 state.counter -= 1
+            case let _action as CounterAction.Increase2:
+                state.counter += _action.value
+            case let _action as CounterAction.Decrease2:
+                state.counter -= _action.value
             case let action as CounterActionEnum:
                 if case .decrease(let value) = action {
                     state.counter += value

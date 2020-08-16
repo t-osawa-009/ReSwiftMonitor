@@ -36,6 +36,14 @@ class ViewController: UIViewController {
         store.dispatch(CounterAction.Increase())
     }
     
+    @IBAction func mainasu5ButtonTapped(_ sender: UIButton) {
+        store.dispatch(CounterAction.Decrease2(value: 5))
+    }
+    
+    @IBAction func plusButton5Tapped(_ sender: UIButton) {
+        store.dispatch(CounterAction.Increase2(value: 5))
+    }
+    
     @IBAction func mainasuEnumButtonTapped(_ sender: UIButton) {
         store.dispatch(CounterActionEnum.decrease(val: -1))
     }

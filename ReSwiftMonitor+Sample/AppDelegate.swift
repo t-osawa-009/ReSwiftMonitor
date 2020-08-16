@@ -12,17 +12,16 @@ import ReSwiftMonitor
 
 var middleware: [Middleware<AppState>] = {
     let monitorMiddleware = MonitorMiddleware.make(configuration: Configuration())
-    let browserMiddleware = BrowserMiddleware.make()
+    let browserMiddleware = BrowserMiddleware(serviceType: nil).make()
     return [monitorMiddleware, browserMiddleware]
 }()
 
 let store = Store<AppState>(reducer: AppState.reducer(), state: AppState(), middleware: middleware)
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         return true
     }
