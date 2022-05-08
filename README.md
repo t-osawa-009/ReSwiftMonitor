@@ -1,19 +1,23 @@
 # ReSwiftMonitor
 
-[ReSwift](https://github.com/ReSwift/ReSwift) middleware that can be used to communicate with redux-dev tools. It has been tested with  [http://remotedev.io/local/](http://remotedev.io/local/), but it should work with [other monitors]( https://github.com/zalmoxisus/remote-redux-devtools#monitoring) too.
+[ReSwift](https://github.com/ReSwift/ReSwift) middleware that can be used to communicate with redux-dev tools. It has been tested with  [redux-devtools cli](https://github.com/reduxjs/redux-devtools/tree/main/packages/redux-devtools-cli), but it should work with [other monitors]( https://github.com/zalmoxisus/remote-redux-devtools#monitoring) too.
 This project is heavily inspired by the [katanaMonitor-lib-swift](https://github.com/bolismauro/katanaMonitor-lib-swift). 
 
 ![gif](https://github.com/takuchantuyoshi/ReSwiftMonitor/blob/master/GIF/reswiftmonitor_sample.gif?raw=true)
 
 #### Dependencies 
 
-Install the remotedev node server once:
+Install the redux-devtools cli once:
 
 ```sh
-npm install -g remotedev-server
+npm install -g @redux-devtools/cli
 ```
 
-Run the server (every time you want to use the monitor)
+Run the standalone application (every time you want to use the monitor)
+
+```sh
+redux-devtools --open
+```
 
 #### Project Integration
 The monitor is shipped using Cocoapods.
@@ -51,8 +55,8 @@ let store = Store<AppState>(reducer: AppState.reducer(), state: AppState(), midd
 
 #### Usage
 
-* Open [http://remotedev.io/local/](http://remotedev.io/local/) in your browser. Click `settings` and make sure that `Use custom local server` is selected and the configuration is the proper ones (by default localhost and 8000). This is the UI where actions will appear
-* Launch `remotedev` in your terminal
+* Launch `redux-devtools` in your terminal
+* Click `settings` and make sure that `Use custom local server` is selected and the configuration is the proper ones (by default localhost and 8000). This is the UI where actions will appear
 * Launch your Reswift application
 
 #### More
