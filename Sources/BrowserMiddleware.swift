@@ -123,7 +123,11 @@ private final class MultipeerConnectivityWrapper: NSObject {
     
     // MARK: - initializer
     private override init() {
+        #if os(iOS) || os(tvOS) || os(watchOS)
         peerID = .init(displayName: UIDevice.current.name)
+        #else
+        peerID = .init(displayName: Host.current().name ?? "Unknown")
+        #endif
         super.init()
     }
     
